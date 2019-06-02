@@ -22,13 +22,13 @@
           </div>
         </div>
         <div class="pt-4 font-weight-bold">
-          CamScott.me
+          {{ $user->profile->title }}
         </div>
         <div class="">
-          We're a global community of millions of people learning to code together. We're an open source, donor-supported, 501(c)(3) nonprofit.
+          {{ $user->profile->description }}
         </div>
         <div class="">
-          <a href="#">www.camscott.me</a>
+          {{ $user->profile->url }}
         </div>
       </div>
     </div>
