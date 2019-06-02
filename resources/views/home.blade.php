@@ -8,7 +8,7 @@
       </div>
       <div class="col-lg-9 pt-5">
         <div class="">
-          <h1>instaprofile</h1>
+          <h1>{{ $user->username }}</h1>
         </div>
         <div class="d-flex">
           <div class="pr-5">
