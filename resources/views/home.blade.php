@@ -7,8 +7,9 @@
         <img src="https://scontent-msp1-1.cdninstagram.com/vp/79938071ad6a79c5863e8e3da4b17004/5D8CE438/t51.2885-19/s150x150/22709172_932712323559405_7810049005848625152_n.jpg?_nc_ht=scontent-msp1-1.cdninstagram.com" class="rounded-circle">
       </div>
       <div class="col-lg-9 pt-5">
-        <div class="">
+        <div class="d-flex justify-content-between align-items-baseline">
           <h1>{{ $user->username }}</h1>
+          <a class="btn btn-primary" href="#" role="button">New Post</a>
         </div>
         <div class="d-flex">
           <div class="pr-5">
@@ -28,7 +29,7 @@
           {{ $user->profile->description }}
         </div>
         <div class="">
-          {{ $user->profile->url }}
+          <a href="http://{{ $user->profile->url }}">{{ $user->profile->url }}</a>
         </div>
       </div>
     </div>
