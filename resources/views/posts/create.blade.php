@@ -3,6 +3,8 @@
 @section('content')
   <div class="container">
     <form action="/p" enctype="multipart/form-data" method="post">
+      @csrf
+
       <div class="row">
         <div class="col-8 offset-2">
           <div class="form-group">
@@ -13,7 +15,7 @@
                   <label for="caption">Post Caption</label>
                   <input id="caption" type="text"
                       class="form-control @error('caption') is-invalid @enderror"
-                      caption="caption"
+                      name="caption"
                       value="{{ old('caption') }}"
                       autocomplete="caption" autofocus>
                       @error('caption')
