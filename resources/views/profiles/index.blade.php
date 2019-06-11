@@ -9,8 +9,9 @@
       <div class="col-lg-9 pt-5">
         <div class="d-flex justify-content-between align-items-baseline">
           <h1>{{ $user->username }}</h1>
-          <a class="btn btn-primary" href="/p/create" role="button">New Post</a>
+          <a class="btn btn-primary" href="/p/create" role="button"><i class="fas fa-plus"></i> New Post</a>
         </div>
+        <a class="btn btn-dark mb-2" href="/profile/{{ $user->id }}/edit" role="button"><i class="fas fa-edit"></i> Edit Profile</a>
         <div class="d-flex">
           <div class="pr-5">
             <strong>{{ $user->posts->count() }}</strong> posts
