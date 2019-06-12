@@ -23,7 +23,11 @@ class ProfilesController extends Controller
       'title' => 'required',
       'description' => 'required',
       'url' => 'required|url',
-      'image' => 'required|image',
+      'image' => '',
     ]);
+
+    auth()->user()->profile->update($data);
+
+    return redirect("/profile/{$user->id}");
   }
 }

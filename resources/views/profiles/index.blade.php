@@ -30,7 +30,7 @@
           {{ $user->profile->description ?? '' }}
         </div>
         <div class="">
-          <a href="http://{{ $user->profile->url ?? '' }}">{{ $user->profile->url ?? '' }}</a>
+          <a href="{{ $user->profile->url ?? '' }}" target="_blank">{{ $user->profile->url ?? '' }}</a>
         </div>
       </div>
     </div>
