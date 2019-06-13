@@ -1,23 +1,35 @@
 <template>
   <div>
-    <a class="btn btn-secondary ml-4 mb-2" href="#" role="button" @click="followUser"><i class="fas fa-signature"></i> Follow</a>
+    <a class="btn btn-secondary ml-4 mb-2" href="#" role="button" @click="followUser" v-text="buttonText"></a>
   </div>
 </template>
 
 <script>
     export default {
-        props: ['userId'],
+        props: ['userId', 'follows'],
 
         mounted() {
             console.log('Component mounted.')
+        },
+
+        data: function () {
+          return {
+            status: this.follows,
+          }
         },
 
         methods: {
           followUser(){
             axios.post('/follow/' + this.userId)
               .then(response => {
-                alert(response.data);
+                this.status = ! this.status;
               });
+          }
+        },
+
+        computed: {
+          buttonText() {
+            return (this.status) ? 'Unfollow' : 'Follow';
           }
         }
     }
