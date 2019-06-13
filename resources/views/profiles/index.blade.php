@@ -8,15 +8,18 @@
       </div>
       <div class="col-lg-9 pt-5">
         <div class="d-flex justify-content-between align-items-baseline">
-          <h1>{{ $user->username }}</h1>
-          @can('update', $user->profile)
-            <a class="btn btn-primary" href="/p/create" role="button"><i class="fas fa-plus"></i> New Post</a>
-          @endcan
+          <div class="d-flex align-items-center">
+            <h1>{{ $user->username }}</h1>
+            <a class="btn btn-secondary ml-4 mb-2" href="#" role="button"><i class="fas fa-signature"></i> Follow</a>
+            @can('update', $user->profile)
+              <a class="btn btn-primary ml-4 mb-2" href="/p/create" role="button"><i class="fas fa-plus"></i> New Post</a>
+            @endcan
+            </div>
         </div>
         @can('update', $user->profile)
-          <a class="btn btn-dark mb-2" href="/profile/{{ $user->id }}/edit" role="button"><i class="fas fa-edit"></i> Edit Profile</a>
+          <a class="btn btn-dark" href="/profile/{{ $user->id }}/edit" role="button"><i class="fas fa-edit"></i> Edit Profile</a>
         @endcan
-        <div class="d-flex">
+        <div class="d-flex mt-3">
           <div class="pr-5">
             <strong>{{ $user->posts->count() }}</strong> posts
           </div>
