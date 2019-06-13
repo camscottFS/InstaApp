@@ -10,7 +10,7 @@
         <div class="d-flex justify-content-between align-items-baseline">
           <div class="d-flex align-items-center">
             <h1>{{ $user->username }}</h1>
-            <a class="btn btn-secondary ml-4 mb-2" href="#" role="button"><i class="fas fa-signature"></i> Follow</a>
+            <follow-button user-id="{{ $user->id }}"></follow-button>
             @can('update', $user->profile)
               <a class="btn btn-primary ml-4 mb-2" href="/p/create" role="button"><i class="fas fa-plus"></i> New Post</a>
             @endcan
