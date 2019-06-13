@@ -24,10 +24,10 @@
             <strong>{{ $user->posts->count() }}</strong> posts
           </div>
           <div class="pr-5">
-            <strong>0</strong> followers
+            <strong>{{ $user->profile->followers->count() }}</strong> followers
           </div>
           <div class="pr-5">
-            <strong>0</strong> following
+            <strong>{{ $user->following->count() }}</strong> following
           </div>
         </div>
         <div class="pt-4 font-weight-bold">
