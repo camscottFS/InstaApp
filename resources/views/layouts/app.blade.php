@@ -53,9 +53,9 @@
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    <img src="/storage/{{ Auth::user()->profile->image }}" class="rounded-circle mr-2" style="max-width: 40px;">{{ Auth::user()->username }} <span class="caret"></span>
+                                    <img src="{{ Auth::user()->profile->profileImage() }}" class="rounded-circle mr-2" style="max-width: 30px;">{{ Auth::user()->username }} <span class="caret"></span>
                                 </a>
-                                
+
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="#"><i class="fas fa-cogs pr-2"></i> Settings</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
